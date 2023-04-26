@@ -9,18 +9,21 @@ def encode(text, key):
     cipher = make_cipher(key)
     ciphertext_chars = []
     for i in text:
-      print(f" at the start of i in test {i}")
+      print(f" replace {i} with:")
       ciphered_char = chr(65 + cipher.index(i))
+      print(ciphered_char)
       ciphertext_chars.append(ciphered_char)
-
+      print(ciphertext_chars)
     return "".join(ciphertext_chars)
 
 
 def decode(encrypted, key):
     cipher = make_cipher(key)
+    print(f"\nKEY: {key}")
 
     plaintext_chars = []
     for i in encrypted:
+        print(f"\nENCRYPTED = {encrypted}")
         plain_char = cipher[65 - ord(i)]
         plaintext_chars.append(plain_char)
 
