@@ -1,13 +1,17 @@
-"""def encode(text, key):
-    cipher = make_cipher(key)
+"""Return to this example and debug it using Discovery Debugging.
 
+If you can, forget about trying to solve it. Instead, discover as much as you can about what is going on in the program.
+"""
+
+def encode(text, key):
+    print( f" text arg {text}")
+    print( f" text arg {key}")
+    cipher = make_cipher(key)
     ciphertext_chars = []
     for i in text:
-        if i in cipher:
-            ciphered_char = chr(65 + cipher.index(i))
-            ciphertext_chars.append(ciphered_char)
-        else:
-            continue
+      print(f" at the start of i in test {i}")
+      ciphered_char = chr(65 + cipher.index(i))
+      ciphertext_chars.append(ciphered_char)
 
     return "".join(ciphertext_chars)
 
@@ -47,6 +51,3 @@ print(f"""
 Expected: theswiftfoxjumpedoverthelazydog
   Actual: {decode('EMBAXNKEKSYOVQTBJSWBDEMBPHZGJSL', 'secretkey')}
 """)
-      
-"""
-
