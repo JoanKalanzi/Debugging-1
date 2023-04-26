@@ -5,16 +5,20 @@ If you can, forget about trying to solve it. Instead, discover as much as you ca
 
 def encode(text, key):
     print( f" text arg {text}")
-    print( f" text arg {key}")
+    print( f" key arg {key}")
     cipher = make_cipher(key)
     ciphertext_chars = []
     for i in text:
-      print(f" replace {i} with:")
-      ciphered_char = chr(65 + cipher.index(i))
-      print(ciphered_char)
-      ciphertext_chars.append(ciphered_char)
-      print(ciphertext_chars)
+      if i in cipher:   
+        print(f" replace {i} with:")
+        ciphered_char = chr(65 + cipher.index(i))
+        print( f" ciphered_char {ciphered_char}")
+        ciphertext_chars.append(ciphered_char)
+        print(ciphertext_chars)
+      else:
+        continue
     return "".join(ciphertext_chars)
+   
 
 
 def decode(encrypted, key):
@@ -23,9 +27,10 @@ def decode(encrypted, key):
 
     plaintext_chars = []
     for i in encrypted:
-        print(f"\nENCRYPTED = {encrypted}")
         plain_char = cipher[65 - ord(i)]
+        print(f"plain_char {plain_char}")
         plaintext_chars.append(plain_char)
+        print(f"plaintext_chars , {plaintext_chars}")
 
     return "".join(plaintext_chars)
 
